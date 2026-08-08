@@ -16,6 +16,7 @@ import { authRoutes } from './routes/auth'
 import { orgRoutes } from './routes/orgs'
 import { projectRoutes } from './routes/projects'
 import { memberRoutes } from './routes/members'
+import { inviteRoutes } from './routes/invites'
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -58,3 +59,4 @@ app.register(authRoutes)
 app.register(orgRoutes)
 app.register(projectRoutes)
 app.register(memberRoutes)
+app.register(inviteRoutes)
