@@ -11,17 +11,37 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
 import { signInWithEmailAndPassword } from './actions'
-import { useActionState } from 'react'
+import { SubmitEventHandler, useState, useTransition } from 'react'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
 
 export function SignInForm() {
-  const [{ errors, message, success }, formAction, isPending] = useActionState(
-    signInWithEmailAndPassword,
-    { success: false, message: null, errors: null }
-  )
+  const [isPending, startTransition] = useTransition()
+
+  const [{ success, message, errors }, setFormState] = useState<{
+    success: boolean
+    message: string | null
+    errors: Record<string, string[]> | null
+  }>({
+    success: false,
+    message: null,
+    errors: null,
+  })
+
+  const handleSignIn: SubmitEventHandler<HTMLFormElement> = (event) => {
+    event.preventDefault()
+
+    const form = event.currentTarget
+    const data = new FormData(form)
+
+    startTransition(async () => {
+      const state = await signInWithEmailAndPassword(data)
+
+      setFormState(state)
+    })
+  }
 
   return (
-    <form action={formAction} className="space-y-4">
+    <form onSubmit={handleSignIn} className="space-y-4">
       {success === false && message && (
         <Alert variant="destructive">
           <AlertTriangle className="size-4" />
