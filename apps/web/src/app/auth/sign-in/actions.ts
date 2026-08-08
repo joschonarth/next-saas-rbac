@@ -7,7 +7,7 @@ import { HTTPError } from 'ky'
 import { cookies } from 'next/headers'
 
 const signInSchema = z.object({
-  email: z.string({ message: 'Please, provide a valid e-mail address.' }),
+  email: z.email({ message: 'Please, provide a valid e-mail address.' }),
   password: z.string().min(1, { message: 'Please, provide your password.' }),
 })
 
@@ -38,7 +38,7 @@ export async function signInWithEmailAndPassword(data: FormData) {
     if (err instanceof HTTPError) {
       const { message } = await err.response.json()
 
-      return { success: true, message, errors: null }
+      return { success: false, message, errors: null }
     }
 
     console.error(err)
