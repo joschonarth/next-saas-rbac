@@ -3,7 +3,7 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 
 import { prisma } from '@/lib/prisma'
-import { BadRequestError } from '../errors/bad-request-error'
+import { BadRequestError } from '../../errors/bad-request-error'
 import { auth } from '@/http/middlewares/auth'
 
 export async function getProfile(app: FastifyInstance) {

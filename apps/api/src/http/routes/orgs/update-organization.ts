@@ -4,8 +4,8 @@ import type { ZodTypeProvider } from 'fastify-type-provider-zod'
 import { z } from 'zod'
 
 import { auth } from '@/http/middlewares/auth'
-import { BadRequestError } from '@/http/routes/errors/bad-request-error'
-import { UnauthorizedError } from '@/http/routes/errors/unauthorized-error'
+import { BadRequestError } from '@/http/errors/bad-request-error'
+import { UnauthorizedError } from '@/http/errors/unauthorized-error'
 import { prisma } from '@/lib/prisma'
 import { getUserPermissions } from '@/utils/get-user-permissions'
 
