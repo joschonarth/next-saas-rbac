@@ -2,7 +2,7 @@ import { faker } from '@faker-js/faker'
 import { PrismaClient } from '../../api/src/generated/prisma/client'
 import { hash } from 'bcrypt'
 import { PrismaPg } from '@prisma/adapter-pg'
-import { env } from '../src/env'
+import { env } from '../../../packages/env'
 
 const adapter = new PrismaPg({
   connectionString: env.DATABASE_URL,
