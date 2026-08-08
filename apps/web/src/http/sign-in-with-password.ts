@@ -1,3 +1,4 @@
+import { HTTPError } from 'ky'
 import { api } from './api-client'
 
 interface SignInWithPasswordRequest {
@@ -13,14 +14,20 @@ export async function signInWithPassword({
   email,
   password,
 }: SignInWithPasswordRequest) {
-  const result = await api
-    .post('sessions/password', {
-      json: {
-        email,
-        password,
-      },
-    })
-    .json<SignInWithPasswordResponse>()
+  try {
+    const result = await api
+      .post('sessions/password', {
+        json: { email, password },
+      })
+      .json<SignInWithPasswordResponse>()
 
-  return result
+    return result
+  } catch (err) {
+    if (err instanceof HTTPError) {
+      const { message } = await err.response.json()
+      throw new Error(message)
+    }
+
+    throw err
+  }
 }
