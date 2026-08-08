@@ -14,6 +14,7 @@ import { errorHandler } from './error-handler'
 import { env } from '@saas/env'
 import { authRoutes } from './routes/auth'
 import { orgRoutes } from './routes/orgs'
+import { projectRoutes } from './routes/projects'
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -54,3 +55,4 @@ app.register(fastifyCors)
 
 app.register(authRoutes)
 app.register(orgRoutes)
+app.register(projectRoutes)
