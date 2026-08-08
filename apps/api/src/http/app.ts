@@ -15,6 +15,7 @@ import { env } from '@saas/env'
 import { authRoutes } from './routes/auth'
 import { orgRoutes } from './routes/orgs'
 import { projectRoutes } from './routes/projects'
+import { memberRoutes } from './routes/members'
 
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
@@ -56,3 +57,4 @@ app.register(fastifyCors)
 app.register(authRoutes)
 app.register(orgRoutes)
 app.register(projectRoutes)
+app.register(memberRoutes)
