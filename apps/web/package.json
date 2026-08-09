@@ -9,14 +9,15 @@
     "env:load": "dotenv -e ../../.env --"
   },
   "dependencies": {
-    "@saas/env": "workspace:*",
     "@saas/auth": "workspace:*",
+    "@saas/env": "workspace:*",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cookies-next": "^6.1.1",
     "ky": "^2.0.2",
     "lucide-react": "^1.30.0",
     "next": "15.5.23",
+    "next-themes": "^0.4.6",
     "radix-ui": "^1.6.7",
     "react": "19.1.0",
     "react-dom": "19.1.0",

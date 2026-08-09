@@ -12,7 +12,6 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
 import { getOrganizations } from '@/http/get-organizations'
-import { cookies } from 'next/headers'
 import { getCurrentOrg } from '@/auth/auth'
 
 export async function OrganizationSwitcher() {
