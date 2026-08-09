@@ -13,10 +13,10 @@ import {
 } from './ui/dropdown-menu'
 import { getOrganizations } from '@/http/get-organizations'
 import { cookies } from 'next/headers'
+import { getCurrentOrg } from '@/auth/auth'
 
 export async function OrganizationSwitcher() {
-  const cookieStore = await cookies()
-  const currentOrg = cookieStore.get('org')?.value
+  const currentOrg = await getCurrentOrg()
 
   const { organizations } = await getOrganizations()
 
