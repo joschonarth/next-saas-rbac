@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔐 Next SaaS RBAC
+# 🛡️ Next SaaS RBAC
 
 _A multi-tenant SaaS boilerplate with authentication and role-based access control._
 
