@@ -34,6 +34,7 @@ The project is organized as a **Turborepo** monorepo, with a Next.js frontend an
 
 ### API
 
+- 🟩 **[Node.js](https://nodejs.org/)** — JavaScript runtime for server-side execution.
 - 🔥 **[Fastify](https://fastify.dev/)** — Fast and low-overhead web framework for Node.js.
 - 🟦 **[TypeScript](https://www.typescriptlang.org/)** — Type safety across the entire codebase.
 - 🔺 **[Prisma ORM](https://www.prisma.io/)** — Type-safe database ORM with migrations and Prisma Studio.
