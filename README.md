@@ -62,7 +62,7 @@ The project is organized as a **Turborepo** monorepo, with a Next.js frontend an
 
 - 🏎️ **[Turborepo](https://turbo.build/)** — High-performance build system for the monorepo.
 - 📦 **[pnpm workspaces](https://pnpm.io/workspaces)** — Efficient dependency management across packages.
-- 🔍 **ESLint** & **Prettier** — Shared, workspace-wide linting and formatting rules.
+- 🔍 **[ESLint](https://eslint.org/)** & **[Prettier](https://prettier.io/)** — Shared, workspace-wide linting and formatting rules.
 
 ---
 
