@@ -42,7 +42,7 @@ The project is organized as a **Turborepo** monorepo, with a Next.js frontend an
 - 🐳 **[Docker](https://www.docker.com/)** — Containerized database for a consistent dev environment.
 - 🔑 **[@fastify/jwt](https://github.com/fastify/fastify-jwt)** — JWT-based authentication.
 - 🔒 **[bcrypt](https://www.npmjs.com/package/bcrypt)** — Password hashing.
-- 🛡️ **CASL** — Attribute-based access control for roles and permissions.
+- 🛡️ **[CASL](https://casl.js.org/)** — Attribute-based access control for roles and permissions.
 - 💎 **[Zod](https://zod.dev/)** — Runtime schema validation with full type inference.
 - 📖 **[Swagger](https://github.com/fastify/fastify-swagger)** — Interactive API documentation.
 - 🌱 **[Faker.js](https://fakerjs.dev/)** — Fake data generation for database seeding.
